@@ -1,0 +1,13 @@
+metric,L,d,sector,eigenvalue,multiplicity
+wick,6,10,radial,0.5555555555555555,1
+wick,6,10,gauge,0.0,5
+wick,6,10,teacher_collective,0.18518518518518515,5
+wick,6,10,teacher_specialization,-0.018518518518518514,25
+wick,6,10,ambient_collective,0.09259259259259257,4
+wick,6,10,ambient_null,0.0,20
+raw,6,10,radial,0.0936985413504371,1
+raw,6,10,gauge,0.0,5
+raw,6,10,teacher_collective,0.03123284711681237,5
+raw,6,10,teacher_specialization,-0.004542959580627254,25
+raw,6,10,ambient_collective,0.015616423558406185,4
+raw,6,10,ambient_specialization,-0.0014196748689460168,20
