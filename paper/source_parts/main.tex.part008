@@ -1,0 +1,31 @@
+ction{Closest frameworks}
+
+\begingroup
+\small
+\setlength{\LTleft}{0pt}
+\setlength{\LTright}{0pt}
+\begin{longtable}{@{}>{\raggedright\arraybackslash}p{0.19\textwidth}>{\raggedright\arraybackslash}p{0.23\textwidth}>{\raggedright\arraybackslash}p{0.52\textwidth}@{}}
+\toprule
+Source family & Closest overlap & What is not supplied directly \\
+\midrule
+\endfirsthead
+\toprule
+Source family & Closest overlap & What is not supplied directly \\
+\midrule
+\endhead
+\midrule
+\multicolumn{3}{r}{\footnotesize Continued on next page}\\
+\endfoot
+\bottomrule
+\endlastfoot
+Symmetric tensor decomposition \cite{arjevani_vinograd} & Symmetry-adapted critical points; exact/asymptotic Hessian spectra; index calculations & The model is a sum of symmetric rank-one powers rather than one Chow product; the repeated-factor Wick/raw formulas and ambient index conversion are not stated. \\
+Shallow polynomial networks \cite{arjevani_polynomial} & Teacher--student tensor approximation under data-induced inner products; complete quadratic Gaussian landscape & The complete signature theorem is for quadratic activations; it does not give arbitrary-order products of distinct linear factors or the six-sector raw spectrum. \\
+Chow geometry \cite{torrance_vannieuwenhoven,kubjas_geometry} & Products of linear forms as an algebraic variety; identifiability, smooth loci, and geometric invariants & The collapsed repeated-factor point has a singular parameter fiber; the cited results do not state the full factor-coordinate population-loss Hessian there. \\
+Linear convolutional networks \cite{kohn_geometry_lcn,kohn_function_space_lcn} & Polynomial factorization models, function-space geometry, repeated filters, and parameterization criticality; Theorem~2.11 of \cite{kohn_function_space_lcn} characterizes criticality through common factors & These results do not evaluate the Wick/raw Gaussian population Hessian or its signed six-sector spectrum at the repeated-factor point. \\
+Polynomial convolutional and neuromanifold geometry \cite{shahverdi_polyconv,shahverdi_razor} & Regularity, singular strata, dimensions, degrees, and generic critical-point counts; Proposition~4.11 of \cite{shahverdi_polyconv} concerns counts rather than types & The local factor-coordinate Hessian coefficients and inertia at the present singular collapsed fiber remain model-specific. \\
+Degenerate metrics on algebraic varieties \cite{marchetti_degenerate} & Projection and ramification methods for critical points under degenerate quadratic objectives & The framework concerns critical-point geometry and counting, not the explicit signed Hessian spectrum under the two Gaussian-chaos metrics used here. \\
+Deep monomial singular learning \cite{kohn_deep_monomial} & Theorem-level links between parameterization criticality and inactive or redundant subnetworks at high activation degree & The result is Jacobian/criticality-level and does not provide the permanent/Isserlis Hessian coefficients or rectangular multiplicities. \\
+Smooth parametrizations \cite{levin_kileel_boumal,trager_pure} & General first/second-order chain rules; spurious criticality and parameterization-induced curvature & The framework yields \eqref{eq:chain-rule-curvature}, but not the permanent/Isserlis coefficients, invariant multiplicities, or metric-dependent inertia. \\
+Inner-product-dependent tensor distance \cite{kozhasov_inner_products} & Algebraic complexity of critical points changes with tensor inner product & It counts generic critical points through ED degree rather than resolving the local signed spectrum at a fixed singular factorization. \\
+Permanent/product optimization \cite{yuan_parrilo} & Exact connection between products of linear forms and positive-semidefinite permanents & A different optimization objective; no teacher--student collapsed Hessian or Wick/raw comparison. \\
+Approximate symmetries \cite{kuhn_rosenow} & Exact symmetry zero modes and their lifting under model perturbations & The present null-to-negative con

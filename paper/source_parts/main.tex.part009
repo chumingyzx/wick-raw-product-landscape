@@ -1,0 +1,54 @@
+version is an exact population formula caused by lower-Hermite contractions, with a specified eigenspace and multiplicity. \\
+\end{longtable}
+\endgroup
+
+\subsection{Direct-duplication criterion}
+
+For this audit, a prior result counts as a \emph{direct formula-level duplicate} only if it supplies, either explicitly or by an immediate substitution, all of the following:
+\begin{enumerate}[label=(D\arabic*)]
+\item the factor parameterization by one product of $L$ linear forms, rather than a sum of powers or a generic tensor rank model;
+\item the fully repeated-factor collapsed point, including its singular parameter fiber;
+\item the Wick/top-chaos or ordinary Gaussian population inner product with the corresponding teacher term; and
+\item the signed factor-coordinate spectrum with multiplicities in rectangular or rank-deficient regimes, sufficient to recover \eqref{eq:wick-inertia}, \eqref{eq:raw-inertia}, or \eqref{eq:index-inflation} without a new model-specific Hessian calculation.
+\end{enumerate}
+
+The targeted search covered exact theorem names and formulas, products-of-linear-forms/Chow geometry, symmetric-tensor Hessian spectra, polynomial-network teacher metrics, smooth-lift Hessian formulas, inner-product-dependent tensor distance, permanent optimization, and symmetry-induced zero modes.  No located source met all four criteria.  In particular:
+\begin{itemize}
+\item symmetry methods explain why a small number of sectors should occur, but the representation and coefficients differ;
+\item smooth-lift theory gives the decomposition \eqref{eq:chain-rule-curvature}, but leaves the residual bilinear form model-dependent;
+\item smooth-locus Chow geometry does not directly cover the repeated-factor singular parameter point; and
+\item quadratic polynomial-network landscape results do not specialize to arbitrary product order.
+\end{itemize}
+
+\subsection{Formula-level novelty assessment}
+
+Independent formula-level rederivations and computational audits reproduced the core spectra, including $d<L$, even-order branch, and embedded-path checks.  A targeted comparison with the primary sources listed above did not locate a direct theorem-level duplicate or short explicit reduction.  The appropriate conclusion remains deliberately asymmetric:
+\begin{quote}
+The theorem family survives a targeted formula-level duplication search and is not a one-line quotation of the closest located results.  It remains strongly embedded in mature frameworks and may be an unstated corollary of a broader theorem.  The search was bounded rather than exhaustive, publication priority remains unresolved, and accountable human peer review has not yet been established.
+\end{quote}
+
+This status is stronger than ``an interesting calculation'' but weaker than ``a proven new theorem in the literature.''  The present draft makes no breakthrough claim and does not infer novelty from the absence of a keyword match.
+
+\section{Computer-assisted verification}
+
+The analytic formulas were checked independently using automatic differentiation and exact finite Gaussian moment calculations.  The verification code is included with this note.
+
+\begin{center}
+\begin{tabular}{@{}lrr@{}}
+\toprule
+Audit & Cells & Maximum absolute error\\
+\midrule
+Rectangular/rank-deficient Wick spectra (including $d<L$) & 28 & $5.1\times10^{-13}$\\
+Rank-one Wick boundary & 8 & $2.05\times10^{-12}$\\
+Zero-row-sum exact identity & 60 & $4.46\times10^{-13}$\\
+Rectangular raw spectra & 9 & $2.66\times10^{-15}$\\
+Raw quadratic-form directions & 72 & $8.88\times10^{-15}$\\
+Even-order raw positive/negative branches & 6 & $<2\times10^{-15}$\\
+Embedded quartic paths & 6 & $<10^{-15}$\\
+Ambient Hermite-leakage unit directions & 5 & $<10^{-14}$\\
+Analytic inertia counts & 242 & $0$ mismatches\\
+\bottomrule
+\end{tabular}
+\end{center}
+
+The Wick permanent is evaluated by a differentiable Ryser formula.  The raw student norm is evaluated independently by summing perfect Gaussian pairings.  Full automatic-differentiat

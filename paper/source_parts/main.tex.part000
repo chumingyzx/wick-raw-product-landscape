@@ -1,0 +1,63 @@
+\documentclass[11pt]{article}
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath,amssymb,amsthm,mathtools,bm}
+\usepackage{booktabs,array,tabularx,longtable}
+\usepackage{graphicx}
+\usepackage{microtype}
+\usepackage{enumitem}
+\usepackage{hyperref}
+\usepackage[nameinlink,capitalize]{cleveref}
+\usepackage{caption}
+
+\hypersetup{
+  colorlinks=true,
+  linkcolor=blue,
+  citecolor=blue,
+  urlcolor=blue,
+  pdftitle={Collapsed-Saddle Spectra for Products of Linear Forms: Hermite Leakage and Metric-Dependent Hessian Inertia}
+}
+
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{remark}[theorem]{Remark}
+\newtheorem{definition}[theorem]{Definition}
+
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\one}{\mathbf{1}}
+\newcommand{\J}{J}
+\newcommand{\perm}{\operatorname{perm}}
+\newcommand{\rank}{\operatorname{rank}}
+\newcommand{\ind}{\operatorname{index}}
+\newcommand{\nul}{\operatorname{nullity}}
+\newcommand{\col}{\operatorname{col}}
+\newcommand{\Span}{\operatorname{span}}
+\newcommand{\tr}{\operatorname{tr}}
+\newcommand{\ip}[2]{\left\langle #1,#2\right\rangle}
+\newcommand{\norm}[1]{\left\lVert #1\right\rVert}
+\newcommand{\F}{\mathrm{F}}
+\newcommand{\spec}{\mathrm{spec}}
+\newcolumntype{Y}{>{\raggedright\arraybackslash}X}
+
+\title{Collapsed-Saddle Spectra for Products of Linear Forms:\\
+Hermite Leakage and Metric-Dependent Hessian Inertia}
+\author{}
+\date{Preprint draft, version 0.3.1\\26 August 2026}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+We study population least-squares landscapes for a single product of $L$ linear forms under isotropic Gaussian input and derive complete parameter-space Hessian spectra at the fully collapsed repeated-factor critical point.  The analysis compares two coefficient-space metrics induced by the same factorized top-degree coefficient map: Wick normalization isolates the top Gaussian-chaos component and yields permanent covariances, whereas the ordinary product retains all lower-Hermite contractions.
+
+For a rectangular Wick teacher $U\in\R^{d\times L}$ with positive-semidefinite Gram matrix $T=U^\top U$, constant row sum $T\one=\gamma\one$, and rank $r$, the collapsed point has Hessian index $(r-1)(L-1)$, nullity $(d-r+1)(L-1)$, and exactly $d$ positive eigenvalues.  For the ordinary Gaussian product with an orthonormal teacher frame, the corresponding index is $(d-1)(L-1)$ and the nullity is $L-1$.  Hence lower-Hermite contractions convert the ambient sector $\col(U)^\perp\otimes\one^\perp$, of dimension $(d-L)(L-1)$, from Hessian-null to strictly negative curvature.  We call this exact inertia change \emph{Hermite-leakage index inflation}.
+
+We also characterize rank-deficient and zero-row-sum boundaries, prove full parameter-space criticality for the raw collapsed branch, identify the even-order companion branch, give an exact ambient single-direction leakage calculation, and state correlation-dependent asymptotics only within their proved scaling windows.  Automatic-differentiation and exact-moment audits include $d<L$ Wick cases, both even-order raw branches, and correctly embedded quartic escape paths.  Independent formula-level rederivations and computational audits support the central spectra.  A targeted comparison with the closest located primary literature did not identify a direct theorem-level duplicate or short explicit reduction; publication priority remains unresolved.
+\end{abstract}
+
+\tableofcontents
+
+\section{Introduction}
+
+Products of linear forms sit at the intersection of several mature theories.  As homogeneous polynomials they form the Chow variety; as parameterized predictors they are multiplicative polynomial networks; under Gaussian population loss their covariances are governed by Wick--Isserlis pairings; and their repeated-factor parameterization creates a singular fiber with a large differential kernel.  These ingredients make the model small enough for exact analys

@@ -1,0 +1,81 @@
+duct model}
+
+The raw product is
+\[
+F_W(x)=\prod_{a=1}^{L}w_a^\top x.
+\]
+For an orthonormal teacher frame $U=[u_1,\ldots,u_L]$, $U^\top U=I_L$, set
+\[
+\tau_U(x)=\prod_{i=1}^{L}u_i^\top x.
+\]
+The population loss is
+\begin{equation}
+\mathcal R_U(W)=\frac12\mathbb E[(F_W(x)-\tau_U(x))^2].
+\label{eq:raw-loss}
+\end{equation}
+Unlike \eqref{eq:wick-loss}, the student norm in \eqref{eq:raw-loss} contains all pairings of $2L$ Gaussian factors, including lower-chaos self-contractions.
+
+Both objectives use the same factorized homogeneous degree-$L$ coefficient map (equivalently, the same Chow-cone parameterization of the top-degree coefficient tensor), but they equip its image with different population inner products.  The Wick-ordered and ordinary student functions are therefore not pointwise identical polynomial expressions.  For an orthonormal teacher frame, however, the teacher Wick product and the ordinary teacher product coincide because cross-contractions among distinct teacher coordinates vanish.
+
+\subsection{Inertia convention}
+For a symmetric Hessian $H$, we write
+\[
+\ind(H)=n_-(H),\qquad \nul(H)=n_0(H),
+\]
+where eigenvalues are counted with algebraic multiplicity.
+
+\section{Lift-level decomposition of factor-space curvature}
+\label{sec:lift-decomposition}
+
+The distinction between parameterization effects and metric-specific effects is made explicit by a standard second-order chain rule.
+
+\begin{proposition}[Gauss--Newton and residual curvature]
+\label{prop:chain-rule-curvature}
+Let $\mathcal H$ be a real Hilbert space, let $\Phi:\R^{d\times L}\to\mathcal H$ be twice differentiable, and define
+\[
+\mathcal E(W)=\frac12\norm{\Phi(W)-\tau}_{\mathcal H}^2.
+\]
+Then, for every perturbation $H$,
+\begin{equation}
+D^2\mathcal E(W)[H,H]
+=
+\norm{D\Phi(W)[H]}_{\mathcal H}^2
++
+\ip{\Phi(W)-\tau}{D^2\Phi(W)[H,H]}_{\mathcal H}.
+\label{eq:chain-rule-curvature}
+\end{equation}
+In particular, on $\ker D\Phi(W)$ the Hessian is determined entirely by the residual-curvature term.
+\end{proposition}
+
+\begin{proof}
+Differentiate $D\mathcal E(W)[H]=\ip{\Phi(W)-\tau}{D\Phi(W)[H]}_{\mathcal H}$ once more in the same direction.
+\end{proof}
+
+Here $\Phi$ denotes the formal homogeneous top-degree coefficient map, represented by its ordinary polynomial.  In the Wick model, the same coefficient tensor is realized in the $L$th Gaussian chaos by Wick ordering; the pointwise Wick differential is the Wick-ordered counterpart of the display below and has the same kernel $H\one=0$.
+
+For the formal top-degree product map
+\[
+\Phi(W)(x)=\prod_{a=1}^{L}w_a^\top x
+\]
+at a repeated-factor point $W=c\,m\one^\top$ with $c\ne0$ and $m\ne0$,
+\begin{equation}
+D\Phi(W)[H](x)
+=c^{L-1}(m^\top x)^{L-1}(H\one)^\top x.
+\label{eq:product-differential}
+\end{equation}
+Hence
+\begin{equation}
+\ker D\Phi(W)=\{H:H\one=0\},
+\qquad
+\dim\ker D\Phi(W)=d(L-1).
+\label{eq:product-kernel}
+\end{equation}
+The first-order kernel contains both genuine infinitesimal gauge directions and directions that change the represented polynomial only at second order.  General lift theory predicts that the latter may acquire residual curvature, but it does not determine its sign or multiplicity without the particular target and function-space metric.  The Wick/raw comparison below computes that residual term exactly: on the ambient specialization sector it vanishes under the top-chaos metric and is strictly negative under the full Gaussian metric.
+
+\begin{remark}[Scope of the general reduction]
+Equation~\eqref{eq:chain-rule-curvature} explains the mechanism class but does not imply the spectra in \cref{thm:wick-rectangular,thm:raw-spectrum}.  Obtaining those formulas still requires: (i) permanent derivatives at a constant rank-one matrix; (ii) exact Gaussian cross-moments with the teacher; and (iii) a simultaneous invariant-sector decomposition that tracks teacher-span, ambient, collective, specialization, radial, and gauge directions.
+\end{remark}
+
+\section{Permanent calculus at a constant rank-one matrix}
+
+The fol

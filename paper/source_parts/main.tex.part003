@@ -1,0 +1,127 @@
+lowing elementary identity drives the Wick analysis.
+
+\begin{lemma}[Permanent derivatives]
+\label{lem:permanent-derivatives}
+Let $p(A)=\perm(A)$ for $A\in\R^{L\times L}$, and let $A_0=\alpha J$.  For $E,F\in\R^{L\times L}$, define
+\[
+s(E)=\one^\top E\one,\qquad r(E)=E\one,\qquad c(E)=E^\top\one.
+\]
+Then
+\begin{equation}
+Dp(A_0)[E]=(L-1)!\alpha^{L-1}s(E),
+\label{eq:perm-first}
+\end{equation}
+and
+\begin{align}
+D^2p(A_0)[E,F]
+=(L-2)!\alpha^{L-2}\bigl(&s(E)s(F)-r(E)^\top r(F)\nonumber\\
+&-c(E)^\top c(F)+\ip{E}{F}_{\F}\bigr).
+\label{eq:perm-second}
+\end{align}
+\end{lemma}
+
+\begin{proof}
+For the first derivative, fix the differentiated entry.  The remaining $L-1$ rows and columns can be matched in $(L-1)!$ ways, and every remaining product equals $\alpha^{L-1}$.  Summing over the differentiated entry yields \eqref{eq:perm-first}.
+
+For the second derivative, two differentiated entries contribute only when they occupy distinct rows and distinct columns.  Summing over all ordered pairs and excluding same-row and same-column pairs by inclusion--exclusion gives
+\[
+s(E)s(F)-r(E)^\top r(F)-c(E)^\top c(F)+\ip{E}{F}_{\F}.
+\]
+The remaining $L-2$ entries contribute $(L-2)!\alpha^{L-2}$.
+\end{proof}
+
+\section{Rectangular and rank-deficient Wick teachers}
+
+\subsection{Regular positive-semidefinite teachers}
+
+Let
+\begin{equation}
+T=U^\top U\succeq0,
+\qquad T\one=\gamma\one,
+\qquad \gamma>0,
+\label{eq:regular-psd}
+\end{equation}
+and set $r=\rank(T)=\rank(U)$.  Since the eigenvector $\one$ has positive eigenvalue $\gamma$, the restriction of $T$ to $\one^\perp$ has exactly $r-1$ positive eigenvalues.  Denote them by
+\[
+\mu_1,\ldots,\mu_{r-1}>0.
+\]
+Define the collapsed point and scale
+\begin{equation}
+W_\star=\frac1L UJ,
+\qquad
+b_L(T)=(L-2)!\left(\frac{\gamma}{L}\right)^{L-2}.
+\label{eq:wick-collapsed-scale}
+\end{equation}
+
+\begin{theorem}[Rectangular regular-PSD Wick spectrum]
+\label{thm:wick-rectangular}
+Under \eqref{eq:regular-psd}, $W_\star$ is a critical point of \eqref{eq:wick-loss}.  Its critical value is
+\begin{equation}
+\mathcal L_U(W_\star)
+=\frac12\left[
+\perm(T)-L!\left(\frac{\gamma}{L}\right)^L
+\right].
+\end{equation}
+The full Hessian spectrum in the $dL$-dimensional parameter space is
+\begin{center}
+\begin{tabular}{@{}lll@{}}
+\toprule
+Sector & Eigenvalue & Multiplicity\\
+\midrule
+Radial & $L(L-1)\gamma b_L(T)$ & $1$\\
+Gauge & $0$ & $L-1$\\
+Teacher collective $i$ & $(L-1)(\gamma+\mu_i)b_L(T)$ & one for each $i$\\
+Teacher specialization $i$ & $-\mu_i b_L(T)$ & $L-1$ for each $i$\\
+Ambient collective & $(L-1)\gamma b_L(T)$ & $d-r$\\
+Ambient null & $0$ & $(d-r)(L-1)$\\
+\bottomrule
+\end{tabular}
+\end{center}
+Consequently,
+\begin{equation}
+\boxed{\ind(W_\star)=(r-1)(L-1)},
+\qquad
+\boxed{\nul(W_\star)=(d-r+1)(L-1)},
+\label{eq:wick-inertia}
+\end{equation}
+and the number of positive eigenvalues is exactly $d$.
+\end{theorem}
+
+\begin{proof}
+Let $e=\one/\sqrt L$.  Since $\norm{Ue}^2=\gamma$, define
+\[
+p_0=\frac{Ue}{\sqrt\gamma}.
+\]
+Choose an orthonormal eigenbasis $q_1,\ldots,q_{L-1}$ of $\one^\perp$ such that $Tq_i=\mu_iq_i$ for $i\leq r-1$, while $Tq_i=0$ for $i\geq r$.  For $i\leq r-1$, let
+\[
+p_i=\frac{Uq_i}{\sqrt{\mu_i}}.
+\]
+Then $p_0,p_1,\ldots,p_{r-1}$ is an orthonormal basis of $\col(U)$.  Complete it with an orthonormal basis $n_1,\ldots,n_{d-r}$ of $\col(U)^\perp$.
+
+At $W_\star$,
+\[
+W_\star^\top W_\star=W_\star^\top U=\frac{\gamma}{L}J.
+\]
+The first derivative of the student norm cancels the first derivative of the cross term, by \cref{lem:permanent-derivatives}; hence $W_\star$ is critical.
+
+For perturbations $H,K$, let
+\[
+E_H=W_\star^\top H+H^\top W_\star,
+\qquad F_H=H^\top U.
+\]
+Differentiating \eqref{eq:wick-loss} twice gives
+\begin{align}
+D^2\mathcal L_U(W_\star)[H,K]
+={}&\frac12D^2p(A)[E_H,E_K]
++\frac12Dp(A)[H^\top K+K^\top H]\nonumber\\
+&-D^2p(A)[F_H,F_K],
+\label{eq:wick-bilinear-hessian}
+\end{align}
+where $A=(\gamma/L)J$.
+
+Now use the orthonormal tensor-product basis
+\[
+p_0e^\top,
+\quad p_0q_j^\top,
+\quad p_ie^\top,
+\quad p_iq_j^

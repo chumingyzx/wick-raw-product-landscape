@@ -1,0 +1,45 @@
+{
+  "project": "Wick/Raw Product Landscape Preprint v0.3.1",
+  "theorems": [
+    {
+      "id": "P0",
+      "name": "Gauss-Newton plus residual-curvature decomposition",
+      "status": "proved_standard_chain_rule"
+    },
+    {
+      "id": "T1",
+      "name": "Rectangular regular-PSD Wick collapsed-point spectrum",
+      "status": "proved_and_independently_reaudited",
+      "core_result": "index=(r-1)(L-1), nullity=(d-r+1)(L-1), positive_count=d",
+      "boundary_coverage": "includes d<L, rank-one, and zero-row-sum cases"
+    },
+    {
+      "id": "T2",
+      "name": "Full raw criticality and even-order companion",
+      "status": "proved_in_v0.3; unchanged_in_v0.3.1"
+    },
+    {
+      "id": "T3",
+      "name": "Rectangular raw Gaussian collapsed-point spectrum",
+      "status": "proved_and_independently_reaudited",
+      "core_result": "index=(d-1)(L-1), nullity=L-1, positive_count=d"
+    },
+    {
+      "id": "C1",
+      "name": "Hermite-leakage Hessian-index inflation",
+      "status": "proved_corollary_and_independently_reaudited",
+      "core_result": "raw_index-wick_index=(d-L)(L-1); col(U)^perp tensor 1^perp is Wick-null and raw-negative"
+    },
+    {
+      "id": "P1",
+      "name": "Restricted equicorrelation crossover",
+      "status": "proved_with_explicit_window"
+    },
+    {
+      "id": "P2",
+      "name": "Rectangularly embedded exact quartic path",
+      "status": "proved_and_reaudited"
+    }
+  ],
+  "review_status": "AI_ASSISTED_INDEPENDENT_REAUDIT_COMPLETE; HUMAN_PEER_REVIEW_NOT_ESTABLISHED"
+}

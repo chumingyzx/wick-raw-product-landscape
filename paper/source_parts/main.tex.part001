@@ -1,0 +1,44 @@
+is while retaining a central difficulty of nonlinear learning: the local parameter-space geometry is not determined solely by the represented function.
+
+We analyze the fully collapsed point, where all student factors coincide.  The main question is not merely whether that point is a saddle, but how its complete Hessian inertia depends on three features that are usually studied separately: teacher rank, ambient overparameterization, and the inner product induced by the data distribution.  The answer exposes a sharp distinction between top-chaos and full Gaussian metrics.
+
+Our contributions are:
+\begin{enumerate}[label=(\roman*)]
+\item \textbf{Rectangular, rank-deficient Wick spectrum.}  For every regular positive-semidefinite teacher Gram matrix $T$ with $T\one=\gamma\one$, we derive the full spectrum in factor coordinates.  If $r=\rank(T)$, the Hessian index is $(r-1)(L-1)$, the nullity is $(d-r+1)(L-1)$, and the positive count is $d$.
+\item \textbf{Rectangular raw-Gaussian spectrum.}  For an orthonormal teacher frame, we derive six invariant sectors and their exact eigenvalues for arbitrary order $L$ and ambient dimension $d\ge L$.
+\item \textbf{Hermite-leakage index inflation.}  Comparing the same factor parameterization under the Wick and ordinary Gaussian metrics shows that lower-Hermite contractions turn the entire sector $\col(U)^\perp\otimes\one^\perp$ from zero curvature into negative curvature.  The exact Hessian-index increase is $(d-L)(L-1)$.
+\item \textbf{Singular boundaries and weak-curvature regimes.}  We identify the rank-one boundary, a zero-row-sum boundary at which the full Hessian vanishes, and correlation regimes in which, after normalization by the teacher squared norm, fixed positive equicorrelation changes the specialization-curvature scale from the exponentially weak orthogonal case to polynomial order in $L$.
+\item \textbf{Formula-level novelty assessment.}  We separate what follows from general lift theory from what requires permanent and Gaussian-pairing calculations, and compare the theorem family against the closest tensor, polynomial-network, Chow, and symmetry literature.
+\end{enumerate}
+
+The closest prior frameworks are substantial.  Symmetric-tensor work constructs highly symmetric critical points and derives exact or asymptotic Hessian spectra for sums of rank-one powers \cite{arjevani_vinograd}.  Polynomial-network theory treats teacher--student tensor approximation under distribution-induced inner products and gives complete Hessian signatures in the quadratic case \cite{arjevani_polynomial}.  Chow-variety work studies identifiability and the differential geometry of smooth products of linear forms \cite{torrance_vannieuwenhoven,kubjas_geometry}.  General smooth-lift theory explains how first- and second-order derivatives of a parameterization affect critical points \cite{levin_kileel_boumal}.  None of those broad descriptions, by itself, fixes the permanent and Isserlis coefficients at the repeated-factor singular point.  Conversely, our formulas may still be implicit in a more general result that we have not identified.  We therefore report a bounded formula-level comparison and treat this document as a circulation draft, not as a settled priority claim.
+
+\section{Models and notation}
+
+Fix integers $L\geq2$ and $d\geq1$, and let
+\[
+W=[w_1,\ldots,w_L]\in\R^{d\times L}.
+\]
+Throughout, $x\sim\mathcal N(0,I_d)$ and $\one\in\R^L$ denotes the all-ones vector.  We write $J=\one\one^\top$.
+
+\subsection{Wick product model}
+
+Let
+\[
+G_W(x)=:\!\prod_{a=1}^{L}w_a^\top x\!:
+\]
+denote the order-$L$ multivariate Wick product.  The Gaussian-chaos covariance identity gives
+\begin{equation}
+\mathbb E[G_W(x)G_U(x)]=\perm(W^\top U).
+\label{eq:wick-permanent}
+\end{equation}
+Thus, for a teacher $U\in\R^{d\times L}$, the population loss is
+\begin{equation}
+\mathcal L_U(W)
+=\frac12\left[
+\perm(W^\top W)-2\perm(W^\top U)+\perm(U^\top U)
+\right].
+\label{eq:wick-loss}
+\end{equation}
+
+\subsection{Ordinary Gaussian pro

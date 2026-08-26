@@ -1,0 +1,48 @@
+Independent v0.3 mathematical audit
+===================================
+{
+  "wick_permanent": "direct permutation enumeration, not bundled Ryser implementation",
+  "raw_moments": "recursive Isserlis pairings, not bundled moment code",
+  "differentiation": "PyTorch automatic differentiation on independently defined losses"
+}
+
+Spectrum cases:
+- Wick L=3,d=2,r=2              dim= 6 |grad|=6.568e-16 max|dλ|=5.078e-16 inertia(obs/pred)=(2, 2, 2)/(2, 2, 2)
+- Wick L=3,d=4,r=2              dim=12 |grad|=2.961e-16 max|dλ|=3.439e-16 inertia(obs/pred)=(2, 6, 4)/(2, 6, 4)
+- Wick L=4,d=3,r=3              dim=12 |grad|=1.272e-16 max|dλ|=3.997e-15 inertia(obs/pred)=(6, 3, 3)/(6, 3, 3)
+- Wick L=4,d=5,r=1              dim=20 |grad|=2.964e-17 max|dλ|=1.110e-16 inertia(obs/pred)=(0, 15, 5)/(0, 15, 5)
+- Raw  L=3,d=4,branch=+1        dim=12 |grad|=1.344e-16 max|dλ|=1.110e-15 inertia(obs/pred)=(6, 2, 4)/(6, 2, 4)
+- Raw  L=3,d=5,branch=+1        dim=15 |grad|=2.679e-16 max|dλ|=6.661e-16 inertia(obs/pred)=(8, 2, 5)/(8, 2, 5)
+- Raw  L=4,d=5,branch=+1        dim=20 |grad|=1.257e-16 max|dλ|=1.554e-15 inertia(obs/pred)=(12, 3, 5)/(12, 3, 5)
+- Raw  L=4,d=5,branch=-1        dim=20 |grad|=1.257e-16 max|dλ|=1.554e-15 inertia(obs/pred)=(12, 3, 5)/(12, 3, 5)
+Overall max eigenvalue error: 3.997e-15
+Overall max gradient norm: 6.568e-16
+All inertia counts match: True
+
+Hermite leakage checks:
+- L=3 d=5 Wick=2.632e-17; Raw=-9.824083996374e-02; predicted=-9.824083996374e-02; max error=8.327e-17
+- L=4 d=6 Wick=-1.490e-17; Raw=-2.561204162859e-02; predicted=-2.561204162859e-02; max error=1.490e-17
+Max leakage error: 8.327e-17
+
+Embedded quartic path checks:
+- L=3 d=4 max error=1.110e-16
+- L=4 d=5 max error=5.551e-17
+- L=5 d=6 max error=7.633e-17
+Max quartic error: 1.110e-16
+
+Exact equicorrelation normalization checks:
+- L=3 rho=0.20 abs error=5.551e-17
+- L=4 rho=0.55 abs error=2.776e-17
+- L=5 rho=0.85 abs error=5.204e-18
+Max exact-normalization error: 5.551e-17
+
+Restricted crossover exact/asymptotic ratios:
+- t=0.6 L= 200: ratio=0.952689
+- t=0.6 L= 800: ratio=0.975318
+- t=0.6 L=3200: ratio=0.987426
+- t=1.0 L= 200: ratio=0.896402
+- t=1.0 L= 800: ratio=0.944809
+- t=1.0 L=3200: ratio=0.971494
+- t=1.8 L= 200: ratio=0.852875
+- t=1.8 L= 800: ratio=0.922839
+- t=1.8 L=3200: ratio=0.960428

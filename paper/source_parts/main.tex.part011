@@ -1,0 +1,79 @@
+vin_kileel_boumal}
+E.~Levin, J.~Kileel, and N.~Boumal.
+\newblock The effect of smooth parametrizations on nonconvex optimization landscapes.
+\newblock \emph{Mathematical Programming}, 209:63--111, 2025.
+\newblock doi:10.1007/s10107-024-02058-3.
+
+\bibitem{trager_pure}
+M.~Trager, K.~Kohn, and J.~Bruna.
+\newblock Pure and spurious critical points: A geometric study of linear networks.
+\newblock \emph{arXiv:1910.01671}, 2019.
+
+\bibitem{kozhasov_inner_products}
+K.~Kozhasov, A.~Muniz, Y.~Qi, and L.~Sodomaco.
+\newblock On the minimal algebraic complexity of the rank-one approximation problem for general inner products.
+\newblock Accepted in \emph{Mathematics of Computation}, 2025.
+\newblock doi:10.1090/mcom/4176; arXiv:2309.15105v3.
+
+\bibitem{yuan_parrilo}
+C.~Yuan and P.~A. Parrilo.
+\newblock Maximizing products of linear forms, and the permanent of positive semidefinite matrices.
+\newblock \emph{arXiv:2002.04149}, 2020.
+
+\bibitem{kuhn_rosenow}
+M.~K\"uhn and B.~Rosenow.
+\newblock Explaining near-zero Hessian eigenvalues through approximate symmetries in neural networks.
+\newblock \emph{arXiv:2607.07845}, 2026.
+
+\bibitem{rawal_deweese}
+D.~Rawal and M.~R. DeWeese.
+\newblock A theory of saddle escape in deep nonlinear networks.
+\newblock \emph{arXiv:2605.01288}, version 2, 2026.
+
+\bibitem{kohn_geometry_lcn}
+K.~Kohn, T.~Merkh, G.~Mont\'ufar, and M.~Trager.
+\newblock Geometry of linear convolutional networks.
+\newblock \emph{SIAM Journal on Applied Algebra and Geometry}, 6(3):368--406, 2022.
+\newblock doi:10.1137/21M1441183.
+
+\bibitem{kohn_function_space_lcn}
+K.~Kohn, G.~Mont\'ufar, V.~Shahverdi, and M.~Trager.
+\newblock Function space and critical points of linear convolutional networks.
+\newblock \emph{SIAM Journal on Applied Algebra and Geometry}, 8(2):333--362, 2024.
+\newblock doi:10.1137/23M1565504; arXiv:2304.05752.
+
+\bibitem{shahverdi_polyconv}
+V.~Shahverdi, G.~L. Marchetti, and K.~Kohn.
+\newblock On the geometry and optimization of polynomial convolutional networks.
+\newblock In \emph{Proceedings of the 28th International Conference on Artificial Intelligence and Statistics}, volume 258 of \emph{Proceedings of Machine Learning Research}, pages 604--612, 2025.
+\newblock arXiv:2410.00722.
+
+\bibitem{shahverdi_razor}
+V.~Shahverdi, G.~L. Marchetti, and K.~Kohn.
+\newblock Learning on a razor's edge: Identifiability and singularity of polynomial neural networks.
+\newblock In \emph{International Conference on Learning Representations}, 2026.
+\newblock arXiv:2505.11846v3.
+
+\bibitem{marchetti_degenerate}
+G.~L. Marchetti, E.~Connelly, P.~Breiding, and K.~Kohn.
+\newblock Critical points of degenerate metrics on algebraic varieties: A tale of overparametrization.
+\newblock \emph{arXiv:2512.21029}, 2025.
+
+\bibitem{kohn_deep_monomial}
+K.~Kohn, G.~L. Marchetti, F.~Shabir, V.~Shahverdi, and W.~Wang.
+\newblock Singular learning and Occam's razor in deep monomial networks.
+\newblock \emph{arXiv:2606.28464}, 2026.
+
+\bibitem{isserlis}
+L.~Isserlis.
+\newblock On a formula for the product-moment coefficient of any order of a normal frequency distribution in any number of variables.
+\newblock \emph{Biometrika}, 12(1/2):134--139, 1918.
+
+\bibitem{janson}
+S.~Janson.
+\newblock \emph{Gaussian Hilbert Spaces}.
+\newblock Cambridge University Press, 1997.
+
+\end{thebibliography}
+
+\end{document}

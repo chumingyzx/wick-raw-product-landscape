@@ -1,0 +1,92 @@
+\documentclass[11pt]{article}
+\usepackage[margin=0.88in]{geometry}
+\usepackage{amsmath,amssymb,booktabs,array,enumitem,microtype,xcolor,hyperref}
+\hypersetup{colorlinks=true,linkcolor=blue,urlcolor=blue,pdftitle={Response to the v0.3 Formula-Level Re-audit - v0.3.1}}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0.48em}
+\setlist[itemize]{leftmargin=1.45em,itemsep=0.2em,topsep=0.2em}
+\newcommand{\one}{\mathbf{1}}
+\newcommand{\perm}{\operatorname{perm}}
+\begin{document}
+
+\begin{center}
+{\Large\bfseries Response to the v0.3 Formula-Level Re-audit}\\[0.4em]
+{\large \emph{Collapsed-Saddle Spectra for Products of Linear Forms:\\ Hermite Leakage and Metric-Dependent Hessian Inertia}}\\[0.35em]
+Preprint v0.3.1 --- 26 August 2026
+\end{center}
+
+\section*{Audit provenance and disposition}
+The v0.3 re-audit was an \textbf{AI-assisted formula-level audit} performed with GPT-5.6 Pro using independent derivations, independently implemented Wick-permanent and raw Isserlis calculations, automatic differentiation, numerical spectrum checks, and targeted comparison with the closest located primary literature.  It is an author-side quality-control record, not anonymous or named human peer review, and it does not establish publication priority.
+
+The re-audit independently reproduced the core Wick and raw spectra, the Hermite-leakage sector, the embedded quartic path, and the restricted equicorrelation asymptotics.  It found no new major mathematical defect and requested three local clarifications before public circulation or submission.  Version 0.3.1 closes all three.
+
+\section*{R1. Review provenance and strength}
+\textbf{Request.} Remove or qualify wording such as ``external mathematical review'' and ``externally reviewed,'' which could be read as conventional human peer review.
+
+\textbf{Revision.} The abstract and theorem paper no longer use those status claims.  They now state only that independent formula-level rederivations and computational audits support the spectra, and that a targeted comparison did not locate a direct theorem-level duplicate or short explicit reduction in the primary sources examined.  The paper explicitly states that accountable human peer review has not yet been established and that publication priority remains unresolved.
+
+Repository-level provenance is recorded separately in \texttt{REVIEW\_PROVENANCE.md} and \texttt{reviews/}.  The original audit reports are preserved unchanged as source records.
+
+\section*{R2. Normalization qualifier for the curvature transition}
+\textbf{Request.} Qualify the statement that positive correlation changes the weak-curvature scale from exponential to polynomial, because that comparison is made after normalization by the teacher squared norm.
+
+\textbf{Revision.} Contribution (iv) now states:
+\begin{quote}
+After normalization by the teacher squared norm, fixed positive equicorrelation changes the specialization-curvature scale from the exponentially weak orthogonal case to polynomial order in $L$.
+\end{quote}
+The exact normalization remains
+\[
+\frac{|\lambda_{\mathrm{spec}}(T_\rho)|}{\perm(T_\rho)}.
+\]
+No claim is made that the unnormalized curvature is polynomial in the same sense.
+
+\section*{R3. Definition of the map $\Phi$}
+\textbf{Request.} Clarify that Section 3 uses the formal homogeneous top-degree coefficient map rather than the pointwise Wick random-function map.
+
+\textbf{Revision.} Section 3 now states that $\Phi$ denotes the formal homogeneous top-degree coefficient map represented by its ordinary polynomial.  In the Wick model, the same coefficient tensor is realized in the $L$th Gaussian chaos by Wick ordering.  The pointwise Wick differential is the Wick-ordered counterpart of the displayed ordinary-polynomial differential, and both have kernel
+\[
+H\one=0.
+\]
+This clarification leaves the chain-rule proposition, kernel, sector decomposition, and all spectrum formulas unchanged.
+
+\section*{Additional editorial improvements}
+The revision also:
+\begin{itemize}
+\item labels the equicorrelation boundary figure as displaying \textbf{unnormalized} specialization curvature;
+\item removes repeated audit-history prose from the theorem paper;
+\item removes the redundant assumption $x_L=O(\sqrt L)$ when $\rho_L\sqrt L\to t$ is already imposed;
+\item replaces ``adjudication'' with ``assessment'' where publication priority remains unresolved;
+\item updates release status and repository documentation to distinguish AI-assisted audit from human peer review.
+\end{itemize}
+
+\section*{Mathematical scope}
+Version 0.3.1 changes wording and exposition only.  The central formulas are unchanged:
+\[
+\operatorname{index}_{\mathrm{Wick}}=(r-1)(L-1),
+\qquad
+\operatorname{nullity}_{\mathrm{Wick}}=(d-r+1)(L-1),
+\]
+\[
+\operatorname{index}_{\mathrm{raw}}=(d-1)(L-1),
+\qquad
+\operatorname{nullity}_{\mathrm{raw}}=L-1,
+\]
+and, for orthonormal teachers and the respective collapsed representatives,
+\[
+\operatorname{index}_{\mathrm{raw}}-\operatorname{index}_{\mathrm{Wick}}
+=(d-L)(L-1).
+\]
+
+\section*{Revised status}
+\begin{verbatim}
+V0_3_1_MINOR_REVISION_COMPLETE
+R1_R3_CLOSED
+CORE_SPECTRA_INDEPENDENTLY_REAUDITED
+AI_ASSISTED_AUDIT_PROVENANCE_DISCLOSED
+HUMAN_PEER_REVIEW_NOT_ESTABLISHED
+NO_DIRECT_DUPLICATE_LOCATED_IN_REVIEWED_SOURCES
+PUBLICATION_PRIORITY_UNRESOLVED
+READY_FOR_ACCOUNTABLE_HUMAN_EXPERT_CIRCULATION
+\end{verbatim}
+
+\end{document}

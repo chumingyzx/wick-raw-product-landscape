@@ -1,0 +1,118 @@
+a^\top x$.  The first two parameter derivatives of the student are
+\[
+F'=c_L^{L-1}S^{L-1}Y,
+\qquad
+F''=c_L^{L-2}S^{L-2}\left(Y^2-\sum_a y_a^2\right).
+\]
+Two moment identities are useful.  For arbitrary $v,w\in\R^d$,
+\begin{align}
+\mathbb E[S^{2L-2}(v^\top x)(w^\top x)]
+=(2L-3)!!L^{L-2}\bigl(&L v^\top w\nonumber\\
+&+2(L-1)(m^\top v)(m^\top w)\bigr),
+\label{eq:student-moment}
+\end{align}
+and
+\begin{equation}
+\mathbb E[\tau_U(x)S^{L-2}(v^\top x)(w^\top x)]
+=(L-2)!\left[(m^\top v)(m^\top w)-v^\top Pw\right].
+\label{eq:teacher-cross-moment}
+\end{equation}
+Equation \eqref{eq:teacher-cross-moment} follows after rotating to the teacher coordinates: the relevant $L\times L$ moment matrix is $(L-2)!(J-I)$, while all ambient contributions vanish.
+
+\begin{theorem}[Raw rectangular Hessian quadratic form]
+\label{thm:raw-quadratic}
+At $W_\star^{\rm raw}$,
+\begin{align}
+\frac{D^2\mathcal R_U(W_\star^{\rm raw})[H,H]}{k_L}
+={}&\left[\frac{4(L-1)^2}{L(2L-1)}-1\right]s^2
++\frac{2(L-1)}{2L-1}\norm{r}^2+\norm{Pr}^2\nonumber\\
+&+\frac{3L-2}{L(2L-1)}\norm{q}^2
+-\frac{L-1}{2L-1}\norm{H}_{\F}^2-\norm{PH}_{\F}^2.
+\label{eq:raw-qform}
+\end{align}
+\end{theorem}
+
+\begin{proof}
+Use
+\[
+D^2\mathcal R_U[H,H]=\mathbb E[(F')^2+(F-\tau_U)F''].
+\]
+Apply \eqref{eq:student-moment} to $Y^2$ and every $y_a^2$, apply \eqref{eq:teacher-cross-moment} to the teacher cross term, and simplify with the critical relation
+\[
+c_L^L L^L(2L-1)!!=L!.
+\]
+Collecting the coefficients of $s^2$, $\norm r^2$, $\norm{Pr}^2$, $\norm q^2$, $\norm H_\F^2$, and $\norm{PH}_\F^2$ yields \eqref{eq:raw-qform}.
+\end{proof}
+
+\begin{theorem}[Raw rectangular spectrum]
+\label{thm:raw-spectrum}
+By \cref{prop:raw-criticality}, $W_\star^{\rm raw}$ is critical.  Its full Hessian spectrum is
+\begin{center}
+\begin{tabular}{@{}lll@{}}
+\toprule
+Sector & Eigenvalue & Multiplicity\\
+\midrule
+Radial & $L(L-1)k_L$ & $1$\\
+Gauge & $0$ & $L-1$\\
+Teacher collective & $2(L-1)k_L$ & $L-1$\\
+Teacher specialization & $-\dfrac{3L-2}{2L-1}k_L$ & $(L-1)^2$\\
+Ambient collective & $(L-1)k_L$ & $d-L$\\
+Ambient specialization & $-\dfrac{L-1}{2L-1}k_L$ & $(d-L)(L-1)$\\
+\bottomrule
+\end{tabular}
+\end{center}
+Consequently,
+\begin{equation}
+\boxed{\ind(W_\star^{\rm raw})=(d-1)(L-1)},
+\qquad
+\boxed{\nul(W_\star^{\rm raw})=L-1},
+\label{eq:raw-inertia}
+\end{equation}
+and the number of positive eigenvalues is $d$.
+\end{theorem}
+
+\begin{proof}
+Let $e=\one/\sqrt L$ and $p_0=m/\sqrt L$.  Choose an orthonormal basis $q_1,\ldots,q_{L-1}$ of $\one^\perp$ and set $p_i=Uq_i$.  Complete $p_0,p_1,\ldots,p_{L-1}$ to an orthonormal basis of $\R^d$ with $n_1,\ldots,n_{d-L}$.
+
+Evaluate \eqref{eq:raw-qform} on the orthonormal tensor-product basis
+\[
+p_0e^\top,
+\quad p_0q_j^\top,
+\quad p_ie^\top,
+\quad p_iq_j^\top,
+\quad n_ae^\top,
+\quad n_aq_j^\top.
+\]
+The six eigenvalues obtained are, in the same order,
+\[
+L(L-1)k_L,
+\quad0,
+\quad2(L-1)k_L,
+\quad-\frac{3L-2}{2L-1}k_L,
+\quad(L-1)k_L,
+\quad-\frac{L-1}{2L-1}k_L.
+\]
+The cross terms vanish because the basis simultaneously diagonalizes the projectors onto $\Span\{m\}$, $\col(U)\cap m^\perp$, and $\col(U)^\perp$, as well as the right factors $\Span\{\one\}$ and $\one^\perp$.  Counting multiplicities gives \eqref{eq:raw-inertia}.
+\end{proof}
+
+\section{Hermite-leakage index inflation}
+
+The Wick and raw objectives share the same factor coordinates and the same top-degree coefficient map, but they induce different inner products on the resulting polynomial coefficient space.  Their rectangular spectra therefore admit a direct comparison.
+
+\begin{corollary}[Hermite-leakage index inflation]
+\label{thm:hermite-leakage}
+Let $U\in\R^{d\times L}$ have orthonormal columns, with $d\geq L$.  At their respective collapsed critical points,
+\begin{align}
+\ind_{\rm Wick}&=(L-1)^2,
+&\nul_{\rm Wick}&=(d-L+1)(L-1),\\
+\ind_{\rm raw}&=(d-1)(L-1),
+&\nul_{\rm raw}&=L-1.
+\end{align}
+Hence
+\begin{equation}
+\boxed{
+\ind_{\rm raw}-\ind_{\rm Wick}=(d-L)(L-1)
+}.
+\label{eq:index-inflation}
+\end{equation}
+The additional negative eigens

@@ -1,0 +1,118 @@
+=
+\frac{x(x+1)}{L(L-1)}
+\frac{(1+x/L)^{L-2}}{E_L(x)}.
+\label{eq:equicorr-exact-normalized}
+\end{equation}
+For every fixed $\rho\in(0,1)$,
+\begin{equation}
+\frac{|\lambda_{\rm spec}(T_\rho)|}{\perm(T_\rho)}
+\sim
+\frac{1-\rho}{\rho^2L(L-1)}.
+\label{eq:equicorr-fixed-rho}
+\end{equation}
+More generally, suppose $\rho_L\sqrt L\to t\in(0,\infty)$.  Then
+\begin{equation}
+\frac{|\lambda_{\rm spec}(T_{\rho_L})|}{\perm(T_{\rho_L})}
+\sim
+\frac{e^{-1/(2t^2)}}{t^2L}.
+\label{eq:equicorr-sqrt-window}
+\end{equation}
+No claim is made here that $\rho_L\sqrt L$ alone classifies all regimes with $\rho_L\to0$ outside this window.
+\end{proposition}
+
+\begin{proof}
+Since $T_\rho=\rho(J+xI)$,
+\[
+\perm(T_\rho)=\rho^LL!E_L(x).
+\]
+Also $1+(L-1)\rho=\rho(L+x)$.  Substitution into \eqref{eq:equicorr-spec} gives \eqref{eq:equicorr-exact-normalized}.  For fixed $x$, $E_L(x)\to e^x$ and $(1+x/L)^{L-2}\to e^x$, proving \eqref{eq:equicorr-fixed-rho}.
+
+The assumption $\rho_L\sqrt L\to t\in(0,\infty)$ implies $x_L/\sqrt L\to t^{-1}$, hence $x_L=O(\sqrt L)$ and $x_L=o(L)$.  Therefore
+\[
+\frac{E_L(x_L)}{e^{x_L}}
+=\Pr\{\operatorname{Poisson}(x_L)\le L\}
+\longrightarrow 1,
+\]
+for example by a standard Poisson upper-tail bound.  Moreover,
+\[
+(L-2)\log(1+x_L/L)-x_L
+=-\frac{x_L^2}{2L}+o(1).
+\]
+Applying these relations to \eqref{eq:equicorr-exact-normalized} yields \eqref{eq:equicorr-sqrt-window}.
+\end{proof}
+
+\begin{figure}[t]
+\centering
+\includegraphics[width=0.78\textwidth]{../plots/equicorrelation_rank_one_boundary.png}
+\caption{Unnormalized specialization curvature as $\rho\uparrow1$.  It vanishes at the rank-one boundary $\rho=1$; the index remains $(L-1)^2$ for every full-rank point and drops only at the singular boundary.}
+\label{fig:rho-boundary}
+\end{figure}
+
+\section{Exact restricted escape and its limitation}
+
+\begin{proposition}[Correctly embedded quartic contrast path]
+\label{prop:quartic-path}
+For an orthonormal Wick teacher $U\in\R^{d\times L}$, choose distinct indices $i\ne j$ and $p\ne q$, and define
+\[
+K=\frac12(e_i-e_j)(e_p-e_q)^\top.
+\]
+Then $K\one=K^\top\one=0$, $\norm K_\F=1$, and along the rectangularly embedded path
+\[
+W(t)=U\left(\frac1LJ+tK\right)
+\]
+one has
+\begin{equation}
+\mathcal L_U(W(t))-\mathcal L_U(W(0))
+=-\frac{a_L}{2}t^2+\frac{a_L}{4}t^4,
+\qquad
+ a_L=\frac{(L-2)!}{L^{L-2}}.
+\label{eq:quartic-path}
+\end{equation}
+\end{proposition}
+
+\begin{proof}
+Write $e=\one/\sqrt L$ and $K=uv^\top$, where
+\[
+u=\frac{e_i-e_j}{\sqrt2},
+\qquad
+v=\frac{e_p-e_q}{\sqrt2}.
+\]
+Then $u,v\perp e$ and $\norm u=\norm v=1$.  With
+\[
+A(t)=ee^\top+tuv^\top,
+\qquad W(t)=UA(t),
+\]
+orthonormality of $U$ gives
+\[
+W(t)^\top U=A(t)^\top,
+\qquad
+W(t)^\top W(t)=ee^\top+t^2vv^\top.
+\]
+At $A_0=ee^\top=J/L$, the first permanent derivatives in the two contrast directions vanish.  By \cref{lem:permanent-derivatives},
+\[
+\perm(A(t)^\top)=\perm(A_0)+\frac{a_L}{2}t^2,
+\qquad
+\perm(A(t)^\top A(t))=\perm(A_0)+\frac{a_L}{2}t^4.
+\]
+There are no higher-order terms because each contrast has only two nonzero rows and two nonzero columns.  Substitution into \eqref{eq:wick-loss} proves \eqref{eq:quartic-path}.
+\end{proof}
+
+The projected gradient flow on this path is
+\[
+\dot t=a_Lt(1-t^2),
+\]
+so the exact projected time from $0<\varepsilon<r<1$ is
+\begin{equation}
+T_{\varepsilon\to r}^{\rm proj}
+=\frac1{a_L}\left[
+\log\frac r\varepsilon
+-\frac12\log\frac{1-r^2}{1-\varepsilon^2}
+\right].
+\end{equation}
+After an orthogonal coordinate reduction one may equivalently take $d=L$, $U=I_L$, and write $W(t)=J/L+tK$.  The affine line is generally not invariant under the full ambient gradient flow, so this is a constrained theorem rather than a full nonlinear escape theorem.  Recent work on saddle-structured dynamics in nonlinear networks illustrates why obtaining full invariant reductions and escape laws is substantially stronger than local Hessian analysis \cite{rawal_deweese}.
+
+\clearpage
+\section{Relation to existing frameworks and formula-level duplication audit}
+\label{sec:novelty-audit}
+
+\subse

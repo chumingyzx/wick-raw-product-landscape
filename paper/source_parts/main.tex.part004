@@ -1,0 +1,134 @@
+\top,
+\quad n_ae^\top,
+\quad n_aq_j^\top.
+\]
+Substitution into \eqref{eq:wick-bilinear-hessian} and \eqref{eq:perm-second} shows that distinct basis elements are Hessian-orthogonal and yields, respectively,
+\[
+L(L-1)\gamma b_L,
+\quad0,
+\quad(L-1)(\gamma+\mu_i)b_L,
+\quad-\mu_i b_L,
+\quad(L-1)\gamma b_L,
+\quad0.
+\]
+The multiplicities sum to
+\[
+1+(L-1)+(r-1)+(r-1)(L-1)+(d-r)+(d-r)(L-1)=dL.
+\]
+The inertia follows because $\gamma>0$ and all listed $\mu_i$ are positive.
+\end{proof}
+
+\begin{corollary}[Orthonormal rectangular teacher]
+\label{cor:wick-orthonormal}
+If $U^\top U=I_L$ and $d\geq L$, then
+\[
+\ind(W_\star)=(L-1)^2,
+\qquad
+\nul(W_\star)=(d-L+1)(L-1),
+\qquad n_+(W_\star)=d.
+\]
+The ambient subspace $\col(U)^\perp\otimes\one^\perp$ is Hessian-null.
+\end{corollary}
+
+\subsection{Singular boundaries}
+
+\begin{corollary}[Rank-one boundary]
+\label{cor:rank-one-boundary}
+If $r=1$, then $T=(\gamma/L)J$, all teacher columns coincide, and $W_\star=U$ is an exact global minimizer.  Its Hessian is positive semidefinite with
+\[
+\ind(W_\star)=0,
+\qquad
+\nul(W_\star)=d(L-1),
+\qquad n_+(W_\star)=d.
+\]
+\end{corollary}
+
+\begin{proposition}[Zero-row-sum boundary]
+\label{prop:gamma-zero}
+Suppose $T\succeq0$, $T\one=0$, and $L\geq3$.  Then $U\one=0$ and the collapsed point is $W_\star=0$.  For every $H\in\R^{d\times L}$ and scalar $t$,
+\begin{equation}
+\mathcal L_U(tH)-\mathcal L_U(0)
+=-t^L\perm(H^\top U)+\frac12t^{2L}\perm(H^\top H).
+\label{eq:gamma-zero-exact}
+\end{equation}
+In particular, both the gradient and Hessian at zero vanish identically.
+\end{proposition}
+
+\begin{proof}
+Positive semidefiniteness and $T\one=0$ imply
+\[
+\norm{U\one}^2=\one^\top T\one=0.
+\]
+The identity \eqref{eq:gamma-zero-exact} follows from degree-$L$ homogeneity of the permanent.  For $L\geq3$, its Taylor expansion has no linear or quadratic term.
+\end{proof}
+
+\section{Rectangular raw Gaussian products}
+
+Assume henceforth that $d\geq L$ and $U^\top U=I_L$.  Set
+\[
+m=U\one,\qquad P=UU^\top,
+\]
+so that $\norm{m}^2=L$.  Along the collapsed ray $W=c\,m\one^\top$, the student is $c^L(m^\top x)^L$.  Gaussian moments give
+\[
+\mathbb E[(m^\top x)^{2L}]=(2L-1)!!L^L,
+\qquad
+\mathbb E[\tau_U(x)(m^\top x)^L]=L!.
+\]
+Let $c_L>0$ denote the positive real root of
+\begin{equation}
+\boxed{
+c_L^L=\frac{L!}{L^L(2L-1)!!}
+=\frac{2^L(L!)^2}{L^L(2L)!}
+}.
+\label{eq:raw-c}
+\end{equation}
+Define
+\[
+W_\star^{\rm raw}=c_Lm\one^\top
+\]
+and
+\begin{equation}
+k_L=(L-2)!c_L^{L-2}.
+\label{eq:raw-k}
+\end{equation}
+
+\begin{proposition}[Full raw criticality and the even-order companion]
+\label{prop:raw-criticality}
+The point $W_\star^{\rm raw}$ is a critical point of \eqref{eq:raw-loss} in the full $dL$-dimensional parameter space.  If $L$ is even, then $-W_\star^{\rm raw}$ is a second collapsed critical representative of the same predictor and has the same Hessian spectrum.
+\end{proposition}
+
+\begin{proof}
+Write $S=m^\top x$.  At $W=c_Lm\one^\top$, the gradient with respect to any column $w_a$ is
+\begin{align}
+\nabla_{w_a}\mathcal R_U(W)
+={}&c_L^{2L-1}\mathbb E[S^{2L-1}x]
+-c_L^{L-1}\mathbb E[\tau_U S^{L-1}x].
+\label{eq:raw-full-gradient}
+\end{align}
+Gaussian integration by parts gives
+\[
+\mathbb E[S^{2L-1}x]=(2L-1)!!L^{L-1}m.
+\]
+Rotating to the orthonormal teacher coordinates and counting the surviving monomials gives
+\[
+\mathbb E[\tau_U S^{L-1}x]=(L-1)!m.
+\]
+Consequently,
+\[
+\nabla_{w_a}\mathcal R_U(W)
+=c_L^{L-1}\left[
+ c_L^L(2L-1)!!L^{L-1}-(L-1)!
+\right]m=0
+\]
+by \eqref{eq:raw-c}.  This holds for every column, proving full parameter-space criticality.
+
+If $L$ is even, replacing $c_L$ by $-c_L$ leaves the predictor unchanged because $(-c_L)^L=c_L^L$.  The same gradient cancellation applies, and all Hessian coefficients below depend on the branch only through $c_L^{L-2}$, which is also unchanged for even $L$.
+\end{proof}
+
+\subsection{Gaussian moment identities}
+
+For a perturbation $H=[h_1,\ldots,h_L]$, define
+\[
+r=H\one,\qquad q=H^\top m,\qquad s=m^\top H\one.
+\]
+Let $S=m^\top x$, $Y=r^\top x$, and $y_a=h_

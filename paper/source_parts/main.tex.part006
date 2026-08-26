@@ -1,0 +1,107 @@
+pace is exactly
+\[
+\col(U)^\perp\otimes\one^\perp.
+\]
+It is Hessian-null in the Wick model and has raw eigenvalue
+\begin{equation}
+-\frac{L-1}{2L-1}k_L
+\label{eq:ambient-raw-negative}
+\end{equation}
+with multiplicity $(d-L)(L-1)$.
+\end{corollary}
+
+\begin{proof}
+The inertia identities follow from \cref{cor:wick-orthonormal,thm:raw-spectrum}.  To expose the mechanism on the additional sector, choose unit vectors
+\[
+n\perp\col(U),\qquad q\perp\one,
+\]
+and set $H=nq^\top$.  Then $H\one=0$, $H^\top m=0$, and $PH=0$.  Thus the first derivative of the raw student vanishes:
+\[
+F'=c_L^{L-1}S^{L-1}(H\one)^\top x=0.
+\]
+Moreover,
+\[
+F''=-c_L^{L-2}S^{L-2}(n^\top x)^2,
+\]
+because $H\one=0$ and $\sum_a q_a^2=1$.  The teacher cross moment is zero because $n\perp\col(U)$, whereas the raw student residual retains the self-contraction of the two ambient factors and contributes
+\begin{align*}
+D^2\mathcal R_U(W_\star^{\rm raw})[H,H]
+&=-c_L^{2L-2}\mathbb E[S^{2L-2}]\mathbb E[(n^\top x)^2]\\
+&=-c_L^{2L-2}(2L-3)!!L^{L-1}\\
+&=-\frac{L-1}{2L-1}k_L.
+\end{align*}
+In the Wick model, ordering removes this lower-chaos self-contraction, and \cref{cor:wick-orthonormal} gives zero curvature on the same sector.  Its dimension is
+\[
+\dim\col(U)^\perp\,\dim\one^\perp=(d-L)(L-1),
+\]
+which proves \eqref{eq:index-inflation} and identifies the additional negative eigenspace.
+\end{proof}
+
+\begin{remark}[Parameterization and residual curvature]
+At a fully repeated factor, the differential of the product map depends only on $H\one$, so every column-sum-zero perturbation is first-order invisible.  Gauge directions remain in the exact parameter fiber.  Other first-order invisible directions can acquire second-order curvature through the residual term
+\[
+\ip{F_W-\tau}{D^2F_W[H,H]}.
+\]
+The Wick metric cancels this contribution on ambient specialization directions, while lower-Hermite self-contractions in the raw metric make it strictly negative.
+\end{remark}
+
+\begin{figure}[t]
+\centering
+\includegraphics[width=0.78\textwidth]{../plots/hermite_leakage_index_inflation.png}
+\caption{For fixed order $L=6$, the Wick index is independent of the ambient dimension, whereas the raw Gaussian index grows linearly with $d$.  The difference is exactly $(d-L)(L-1)$.}
+\label{fig:index-inflation}
+\end{figure}
+
+\section{Weak-curvature scaling and singular transitions}
+
+\subsection{Orthogonal teachers}
+For the Wick model,
+\[
+a_L=\frac{(L-2)!}{L^{L-2}}
+\sim\sqrt{2\pi L}\,e^{-L}.
+\]
+Thus the number of negative directions grows quadratically in $L$ while each specialization curvature becomes exponentially weak.
+
+For the raw model, the teacher-span specialization curvature obeys
+\[
+\left|\lambda_{\rm teacher,spec}^{\rm raw}\right|
+\sim6\sqrt2\,\pi L(2e)^{-L},
+\]
+while the ambient specialization curvature obeys
+\[
+\left|\lambda_{\rm ambient,spec}^{\rm raw}\right|
+\sim2\sqrt2\,\pi L(2e)^{-L}.
+\]
+The raw metric therefore creates more strict descent directions but makes their scale even smaller.
+
+\subsection{Equicorrelated Wick teachers}
+Let
+\[
+T_\rho=(1-\rho)I+\rho J,
+\qquad -\frac1{L-1}<\rho<1.
+\]
+Then
+\[
+\gamma=1+(L-1)\rho,
+\qquad \mu=1-\rho,
+\]
+and every specialization eigenvalue is
+\begin{equation}
+-(1-\rho)(L-2)!\left(\frac{1+(L-1)\rho}{L}\right)^{L-2}.
+\label{eq:equicorr-spec}
+\end{equation}
+As $\rho\uparrow1$, these $(L-1)^2$ negative eigenvalues approach zero.  At $\rho=1$, the Gram rank drops to one, \cref{cor:rank-one-boundary} applies, and the index jumps from $(L-1)^2$ to zero.
+
+After normalizing by the teacher squared norm $\perm(T_\rho)$, positive correlation changes the asymptotic weak-curvature class.  The exact normalized specialization curvature can be written without an unproved regime extrapolation.
+
+\begin{proposition}[Exact equicorrelation normalization and a restricted crossover]
+\label{prop:equicorr-normalized}
+For $0<\rho<1$, let
+\[
+x=\frac{1-\rho}{\rho},
+\qquad
+E_L(x)=\sum_{j=0}^{L}\frac{x^j}{j!}.
+\]
+Then
+\begin{equation}
+\frac{|\lambda_{\rm spec}(T_\rho)|}{\perm(T_\rho)}

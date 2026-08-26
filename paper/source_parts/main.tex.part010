@@ -1,0 +1,59 @@
+ion Hessians are diagonalized for small orders and random embeddings.  Version 0.3.1 includes the $d<L$ Wick cases, both even-order raw branches, the rectangularly embedded quartic path, and direct unit-direction checks of the ambient Hermite-leakage coefficient.  The code is diagnostic support, not a substitute for the proofs.
+
+\section{Limitations, circulation status, and next step}
+
+The results are local, population-level statements for a highly structured model.  They do not establish global convergence, a full ambient nonlinear escape theorem, an SGD law, or dominance of the same mechanism in practical neural networks.  The raw theorem assumes an orthonormal teacher frame; a general raw regular-teacher formula remains open in this development.  The computational audit verifies finite instances but is not a substitute for the analytic proofs.
+
+The novelty assessment is also bounded.  It uses targeted searches, theorem-level comparison against the closest located primary sources, and independent formula-level rederivations and computational audits.  It is not a systematic review of every tensor, invariant-theory, singularity, and algebraic-statistics result.  Accordingly, this version is \emph{ready for ordinary expert circulation, while human peer review and publication priority remain unresolved}.
+
+The targeted comparison did not locate an immediate reduction of the rectangular Wick spectrum, the arbitrary-order raw six-sector spectrum, or the exact ambient null-to-negative conversion in the primary sources examined.  The next legitimate step is accountable human expert circulation and, if appropriate after that review, submission as a compact theorem note while maintaining a conservative priority claim.  A direct reduction supplied later should still demote the affected claims to worked corollaries.  Further theorem-family expansion, architecture design, and broad neural benchmarking remain outside the scope of this revision.
+
+\appendix
+
+\section{Sector table for a representative rectangular model}
+
+For $L=6$ and $d=10$, the exact sector values and multiplicities are visualized in \cref{fig:sector-spectrum}.  The plot emphasizes that the raw ambient sector has nonzero positive and negative curvatures, while the Wick ambient specialization sector is null.
+
+\begin{figure}[h]
+\centering
+\includegraphics[width=0.96\textwidth]{../plots/sector_spectrum_comparison.png}
+\caption{Sector eigenvalues and multiplicities for $L=6$, $d=10$.  Values are unnormalized; annotations show multiplicities.}
+\label{fig:sector-spectrum}
+\end{figure}
+
+\section{Rank dependence of Wick inertia}
+
+At fixed $L$ and $d$, \cref{eq:wick-inertia} gives a linear exchange between index and nullity as the teacher Gram rank changes, while the positive count remains $d$.
+
+\begin{figure}[h]
+\centering
+\includegraphics[width=0.82\textwidth]{../plots/wick_rank_deficiency_bifurcation.png}
+\caption{Exact inertia as a function of teacher Gram rank for $L=12$, $d=18$.}
+\end{figure}
+
+\begin{thebibliography}{99}
+
+\bibitem{arjevani_vinograd}
+Y.~Arjevani and G.~Vinograd.
+\newblock Symmetry \& critical points for symmetric tensor decomposition problems.
+\newblock \emph{arXiv:2306.07886}, version 5, 2025.
+
+\bibitem{arjevani_polynomial}
+Y.~Arjevani, J.~Bruna, J.~Kileel, E.~Polak, and M.~Trager.
+\newblock Geometry and optimization of shallow polynomial networks.
+\newblock \emph{SIAM Journal on Applied Algebra and Geometry}, 10(2):174--209, 2026.
+\newblock doi:10.1137/25M1732994.
+
+\bibitem{torrance_vannieuwenhoven}
+D.~A. Torrance and N.~Vannieuwenhoven.
+\newblock Almost all subgeneric third-order Chow decompositions are identifiable.
+\newblock \emph{Annali di Matematica Pura ed Applicata}, 201:2891--2905, 2022.
+\newblock doi:10.1007/s10231-022-01224-8.
+
+\bibitem{kubjas_geometry}
+K.~Kubjas, J.~Li, and M.~Wiesmann.
+\newblock Geometry of polynomial neural networks.
+\newblock \emph{Algebraic Statistics}, 15(2):295--328, 2024.
+\newblock doi:10.2140/astat.2024.15.295.
+
+\bibitem{le
