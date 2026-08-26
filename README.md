@@ -1,6 +1,6 @@
 # Wick/Raw Product Landscape Preprint v0.3.1
 
-This private repository contains the minor-revision version of
+This repository contains the minor-revision version of
 
 > **Collapsed-Saddle Spectra for Products of Linear Forms: Hermite Leakage and Metric-Dependent Hessian Inertia**
 
