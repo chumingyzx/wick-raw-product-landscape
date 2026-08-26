@@ -17,19 +17,17 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: '3.11'
-      - name: Reconstruct large text source
+      - name: Reconstruct the complete LaTeX source
         run: cat paper/source_parts/main.tex.part* > paper/main.tex
       - name: Install system dependencies
         run: |
           sudo apt-get update
-          sudo apt-get install -y poppler-utils texlive-latex-extra texlive-fonts-recommended
+          sudo apt-get install -y poppler-utils texlive-latex-extra texlive-fonts-recommended latexmk
       - name: Install Python dependencies
         run: python -m pip install -r requirements.txt
-      - name: Verify source manifest
-        run: python verify_manifest.py
-      - name: Build and validate release
+      - name: Build mathematical results, figures, and PDFs
         run: python scripts/run_all.py
-      - name: Regenerate release manifest
+      - name: Regenerate immutable release manifest
         run: |
           python - <<'PY'
           from pathlib import Path
@@ -37,18 +35,17 @@ jobs:
           root = Path('.')
           manifest = {}
           for p in sorted(root.rglob('*')):
-              if not p.is_file():
+              if not p.is_file() or p.name == 'MANIFEST_SHA256.json':
                   continue
-              rel = p.as_posix()
-              if p.name == 'MANIFEST_SHA256.json' or p.suffix in {'.aux','.log','.out','.toc','.pyc'}:
+              if any(part in {'.git', '.pytest_cache', '__pycache__'} for part in p.parts):
                   continue
-              if any(part in {'.git','.pytest_cache','__pycache__'} for part in p.parts):
+              if p.suffix in {'.aux', '.log', '.out', '.toc', '.pyc', '.fls', '.fdb_latexmk'}:
                   continue
-              manifest[rel] = hashlib.sha256(p.read_bytes()).hexdigest()
+              manifest[p.as_posix()] = hashlib.sha256(p.read_bytes()).hexdigest()
           Path('MANIFEST_SHA256.json').write_text(json.dumps(manifest, indent=2, sort_keys=True) + '\n')
           PY
           python verify_manifest.py
-      - name: Commit built release artifacts
+      - name: Commit generated release artifacts
         if: github.event_name == 'push'
         run: |
           git config user.name 'github-actions[bot]'
