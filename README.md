@@ -63,7 +63,7 @@ A working LaTeX installation with `pdflatex` is required to rebuild the manuscri
 
 ## AI assistance
 
-This project was developed through an AI-assisted mathematical research workflow with OpenAI's ChatGPT (**GPT-5.6 Sol, Pro**). ChatGPT was used extensively for hypothesis generation, theorem exploration, symbolic derivations, proof checking, counterexample search, computational audit design, code development, literature comparison, and manuscript revision.
+This project was developed through an AI-assisted mathematical research workflow with OpenAI's ChatGPT (**GPT-5.6 Sol Pro**). ChatGPT was used extensively for hypothesis generation, theorem exploration, symbolic derivations, proof checking, counterexample search, computational audit design, code development, literature comparison, and manuscript revision.
 
 The mathematical statements are documented through explicit derivations and reproducible computational checks in this repository. AI assistance does not constitute independent authorship or human peer review.
 
